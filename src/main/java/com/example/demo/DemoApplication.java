@@ -19,8 +19,13 @@ public class DemoApplication {
 		return "Springboot hello to Gitlab CI";
 	}
 
-	@GetMapping("test/hi")
+	@GetMapping("test/")
 	public String hi(){
+		return "Springboot hello to Gitlab CI";
+	}
+
+	@GetMapping("test/")
+	public String sayHi(){
 		return "Springboot hello to Gitlab CI";
 	}
 }
