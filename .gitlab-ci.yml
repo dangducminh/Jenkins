@@ -1,0 +1,25 @@
+variable:
+    MAVEN_CLI_OPTS: "-s .m2/setting.xml --batch-node"
+    MAVEN_OPTS: " -Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository
+    - target
+
+build:
+  stage: build
+  script:
+    - mvn clean package
+
+test:
+  stage: test
+  script:
+    - mvn test
+
+deployment:
+  stage: deploy
+  script:
+    - java -jar ./target/demo-0.0.1-SNAPSHOT.jar
+  only:
+    - master
