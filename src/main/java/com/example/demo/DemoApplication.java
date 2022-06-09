@@ -14,8 +14,13 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@GetMapping("test/v1")
+	@GetMapping("test/hello")
 	public String hello(){
+		return "Springboot hello to Gitlab CI";
+	}
+
+	@GetMapping("test/hi")
+	public String hi(){
 		return "Springboot hello to Gitlab CI";
 	}
 }
